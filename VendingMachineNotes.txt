@@ -1,0 +1,80 @@
+Coin:
+    - Coin(double value, String name)
+    - double getValue()
+    - String getName()
+    - String toString()
+
+CoinSet:
+    - CoinSet()
+    - void addCoin(Coin coin)
+    - String removeCoins()
+    - ArrayList<Coin> getCoins()
+    - void addCoin(ArrayList<Coin> coinSet)
+    - double getTotal()
+    - double getChange(double price)
+
+Operator:
+    - Operator(String type, String password)
+    - String getType()
+    - String getPassword()
+
+Product:
+    - Product(String description, double price)
+    - String toString()
+    - double getPrice()
+    - String getDescription()
+
+TextFileReader:
+    - File getProductFile()
+    - File getCoinsFile()
+    - File getOperatorsFile()
+    - File getCoinTypesFile()
+    - CoinSet readFileToCoinSet()
+    - Coin[] readFileToCoinTypesArray()
+    - ArrayList<Product> readFileToProductsArrayList()
+    - ArrayList<Operator> readFileToOperatorsArrayList()
+
+TextFileWriter:
+    - void writeCoinsToFile(ArrayList<Coin> coins), or void writeCoinsToFile(Coin[] coins)
+    - void writeProductsToFile(ArrayList<Product> products), or void writeProductsToFile(Product[] product)
+    - ArrayList<Coin> removeDuplicateCoins (ArrayList<Coin> coins)
+    - ArrayList<Product> removeDuplicateProducts(ArrayList<Product> products)
+    - int duplicateProductAmount(ArrayList<Product> products, Product p)
+    - int duplicateCoinAmount(ArrayList<Coin> coins, Coin c)
+
+GetChoice:
+    - String getCoinChoices(Coin[] coinOptions), or String getCoinChoices(ArrayList<Coin> choices)
+    - String getProductChoices(Product[] productOptions), or String getProductChoices(ArrayList<Product> choices)
+    - Coin getSelectedCoin(Coin[] coinOptions, int pos)
+    - Product getSelectedProduct(Product[] productOptions, int pos)
+
+VendingException
+    - VendingException(String reason)
+
+VendingMachine
+    - VendingMachine()
+    - Product[] getProductTypes(), or ArrayList<Product> getProductTypes()
+    - String addCoin(Coin c)
+    - String removeMoney()
+    - CoinSet getStoredCoins()
+    - buyProduct(Product p)
+    - removeProduct(Product p, int quantity)
+    - addProduct(Product p, int quantity)
+    - boolean isValidOperatorCode(String input)
+    - void closeDown()
+    - startMenuOptions()
+    - void operatorOptions()
+
+VendingMachineCLI
+    - VendingMachineCLI(Scanner in, Coin[] coins, VendingMachine vendingMachine)
+
+VendingMachineGUI
+    - VendingMachineGUI()
+    - void Start(Stage primaryStage)
+    - void clearUserInput()
+    - void clearOperatorCheckCode()
+    - void addChoice(String choice)
+    - void showProductsMenu()
+    - void operatorOptionCheck()
+    - void clearButtonActions()
+    - void quit()

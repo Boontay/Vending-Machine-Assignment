@@ -1,0 +1,4 @@
+chocolate,1.0,5
+bar,1.2,7
+taytos,0.9,8
+fanta,1.2,10

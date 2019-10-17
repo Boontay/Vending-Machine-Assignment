@@ -47,8 +47,6 @@ public class CoinSet {
 
     public double getChange(double price, double valueInputted) {
         // this doesn't actually give coin objects back. it just calculates the difference in values.
-        // i honestly couldn't be arsed to do that shit.
-
         return valueInputted - price;
     }
 }
